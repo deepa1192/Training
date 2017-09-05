@@ -1,0 +1,14 @@
+import requests
+#from pprint import pprint 
+def main():
+  r=resquests.get("http://api.openweathermap.org/data/2.5/weather?q=chennai&appid=befb9bb41f1d6099ef3a4942ba7bc9d9&units=metric")
+  weather=r.jason()
+  #pprint(weather)
+  
+  print("City:", weather['name])
+  print("Current Temperature:",weather['main']['temp']
+  print([weather['weather'][2]['description'])
+  print("wind m/s",weather['wind']['speed'])
+main()
+  
+  
