@@ -1,21 +1,39 @@
 ## Program to insert character “b” before every second word in a line
-import re    
+## import regex moule
+import re
 def example():
-## to get input from user
-        s=str(input())
         a='b'
-##to find the word count of the entered sentence
-        count =len(re.findall(r'\w+', s))
+        a1=a.split(" ")
+## assign the path of the file to a variable. Here i am giving dummy path
+        path ='C:\Users\admin\Desktop\testfile.txt'
+
+## open the file using open() function and use r+modetoread an write in the same file
+        ins_file = open(path,'r+')
+
+## read operations 
+## ins_read1 reads the input file line-by-line and retuns next line of the file
+        ins_read1 = ins_file.readline()
+        
+## to find the length of the first line
+        count =len(re.findall(r'\w+', ins_read1))
         #print(count)
         if (count > 1):
-            s1=s.split(" ")
-            #print(s1)
-            a1=a.split(" ")
-            #print(a1)
-## concatenation of lists
-            s1[1]= a1[0]+s1[1]
-            #print(s1)
+        
+## ins_read2 reads the previous ins_read1 file and returns in list format.
+        ins_read2 = ins_read1.readlines()
+        
+        #print(ins_read2)
+## concatenation of lists     
+        ins_read2[1] = a1[0]+ins_read2[1]
+        
 ## string separated by space from the above list
-            print(" ".join(s1))
-                         
-example ()
+        #print(" ".join(ins_read2))
+        
+## write to the ouput file
+        ins_file.write(ins_read2)
+        print(ins_read2)
+
+## close the file
+        ins_file.close()
+
+example()
