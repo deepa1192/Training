@@ -1,0 +1,11 @@
+import requests
+ def main():
+    r=requests.get("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=AIzaSyCla7j4AbfE3Nxz-ccmbkaHeLoUuo45LDM")
+    
+    distance=r.jason()
+    
+    print("origin address",distance['origin_addresses'])
+    print("destination address", distance[destination_addresses])
+    print("distance between origin and destination",distance['rows'][0]['elements'][1]['distance']['text'])
+    print("time to reach destination", distance['rows'][0]['elements'][0]['duration']['text'])
+main()

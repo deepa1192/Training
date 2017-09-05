@@ -1,0 +1,21 @@
+## Program to insert character “b” before every second word in a line
+import re    
+def example():
+## to get input from user
+        s=str(input())
+        a='b'
+##to find the word count of the entered sentence
+        count =len(re.findall(r'\w+', s))
+        #print(count)
+        if (count > 1):
+            s1=s.split(" ")
+            #print(s1)
+            a1=a.split(" ")
+            #print(a1)
+## concatenation of lists
+            s1[1]= a1[0]+s1[1]
+            #print(s1)
+## string separated by space from the above list
+            print(" ".join(s1))
+                         
+example ()
